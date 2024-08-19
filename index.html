@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             color: #333;
+            overflow-x: hidden;
         }
         header {
             background: #2c3e50;
@@ -19,21 +20,33 @@
             padding: 20px 0;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
-        header img {
+        header svg {
+            width: 60px;
+            height: 60px;
             position: absolute;
             top: 10px;
             left: 20px;
-            width: 50px;
-            height: 50px;
+            animation: spin 6s linear infinite;
+        }
+        @keyframes spin {
+            from {transform: rotate(0deg);}
+            to {transform: rotate(360deg);}
         }
         header h1 {
             font-size: 2.5em;
             margin: 0;
+            animation: fadeIn 2s ease-in;
         }
         header p {
             font-size: 1.2em;
             margin-top: 10px;
+            animation: fadeIn 3s ease-in;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
         }
         section {
             margin: 20px;
@@ -41,6 +54,11 @@
             background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 2s ease-in-out;
+        }
+        @keyframes slideIn {
+            from {transform: translateX(-100%);}
+            to {transform: translateX(0);}
         }
         section h2 {
             color: #2980b9;
@@ -50,7 +68,8 @@
             color: #ecf0f1;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
+            position: relative;
+            margin-top: 20px;
             bottom: 0;
             width: 100%;
         }
@@ -58,7 +77,12 @@
 </head>
 <body>
     <header>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/New_Logo_GitHub_Logo.svg" alt="Logo de Ciencia Compartida">
+        <!-- Logo SVG creado con código -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+            <circle cx="32" cy="32" r="30" fill="#2980b9"/>
+            <rect x="22" y="22" width="20" height="20" fill="#ecf0f1"/>
+            <rect x="28" y="28" width="8" height="8" fill="#2980b9"/>
+        </svg>
         <h1>Ciencia Compartida</h1>
         <p>Un espacio dedicado al estudio científico y la educación, creado para compartir conocimiento de manera gratuita y colaborativa en la comunidad</p>
     </header>
@@ -91,4 +115,3 @@
     </footer>
 </body>
 </html>
-
